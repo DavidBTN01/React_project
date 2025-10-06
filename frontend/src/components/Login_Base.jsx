@@ -1,12 +1,14 @@
 import { useState } from "react";
 import axios from "../api/axios";
 import { useNavigate } from "react-router-dom";
+import "../styles/style.css";
 
 export default function Login_Base({ onLogin }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -22,11 +24,11 @@ export default function Login_Base({ onLogin }) {
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-black text-white">
-      <div className="w-full max-w-md p-6">
-        
-
-        <h2 className="text-2xl font-bold mb-6 text-center">Inicia sesión</h2>
+    <div className="login-container">
+      <div className="login-box w-full max-w-md p-6">
+        <h2 className="text-3xl font-bold mb-6 text-center text-white">
+          Inicia sesión
+        </h2>
 
         <form onSubmit={handleLogin}>
           <div>
@@ -36,23 +38,37 @@ export default function Login_Base({ onLogin }) {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
-              style={{ width: "100%", padding: "0.5rem", marginBottom: "1rem" }}
+              className="login-input"
             />
           </div>
-          <div>
+          <div className="password-container" style={{ position: "relative" }}>
             <input
-              type="password"
+              type={showPassword ? "text" : "password"}
               placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
-              style={{ width: "100%", padding: "0.5rem", marginBottom: "1rem" }}
+              className="login-input"
             />
+            <button
+              type="button"
+              onClick={() => setShowPassword(!showPassword)}
+              className="toggle-password"
+              style={{
+                position: "absolute",
+                right: "10px",
+                top: "50%",
+                transform: "translateY(-50%)",
+                background: "none",
+                border: "none",
+                cursor: "pointer",
+              }}
+            >
+              {showPassword ? "O" : "X"}
+            </button>
           </div>
-          <button
-            type="submit"
-            style={{ padding: "0.5rem 1rem", marginRight: "1rem" }}
-          >
+
+          <button type="submit" className="login-button">
             Login
           </button>
         </form>
@@ -66,7 +82,10 @@ export default function Login_Base({ onLogin }) {
             </a>
           </p>
           <p>
-            <a href="/forgot-password" className="hover:underline">
+            <a
+              href="/forgot-password"
+              className="text-blue-400 hover:underline"
+            >
               ¿Olvidaste tu contraseña?
             </a>
           </p>

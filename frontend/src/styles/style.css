@@ -1,0 +1,113 @@
+/* Fondo general tipo Discord */
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
+main {
+  background: transparent;
+}
+
+.login-container {
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+  height: 100%;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #1e1f22, #2c2f33, #23272a);
+  font-family: "Segoe UI", sans-serif;
+  color: #fff;
+}
+
+/* Caja central */
+.login-box {
+  background-color: #2f3136;
+  padding: 40px 50px;
+  border-radius: 10px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+  text-align: center;
+}
+
+/* Inputs Login */
+.login-input {
+  width: 95%;
+  padding: 12px;
+  padding-right: 0px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+  background-color: #202225;
+  color: #fff;
+  font-size: 14px;
+}
+
+.login-input:focus {
+  outline: 2px solid #5865f2;
+}
+
+/* Botón */
+.login-button {
+  width: 100%;
+  background-color: #5865f2;
+  color: white;
+  border: none;
+  padding: 12px;
+  padding-right: 0px;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.2s ease;
+}
+
+.login-button:hover {
+  background-color: #4752c4;
+}
+
+
+/* Inputs Register */
+
+.register-input {
+  width: 95%;
+  padding: 12px;
+  padding-right: 0px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+  background-color: #202225;
+  color: #fff;
+  font-size: 14px;
+}
+
+.register-input:focus {
+  outline: 2px solid #5865f2;
+}
+
+/* Botón */
+.register-button {
+  width: 100%;
+  background-color: #5865f2;
+  color: white;
+  border: none;
+  padding: 12px;
+  padding-right: 0px;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.2s ease;
+}
+
+.login-button:hover {
+  background-color: #4752c4;
+}
